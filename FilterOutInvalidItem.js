@@ -7,7 +7,15 @@
 // filterOut([“a”, “d”, 1, true, “cd”, 33], “string”);
 // Output [1, true, 33];
 
-function filterOutInvalidItem(arr, type) {
-  return arr.filter((el) => typeof el !== type);
+function filterByType(array, type) {
+  if (!Array.isArray(array) || typeof type !== "string" || array.length === 0) {
+    return "Invalid input";
+  }
+  return array.filter((value) => typeof value !== type.toLowerCase());
 }
-console.log(filterOutInvalidItem(["a", "d", 1, true, "cd", 33], "string"));
+console.log(
+  filterByType(
+    ["a"],
+    "string",
+  )
+);

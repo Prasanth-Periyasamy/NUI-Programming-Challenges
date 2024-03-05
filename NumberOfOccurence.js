@@ -3,14 +3,23 @@
 // findNumberOfOccurance(“be kind whenever possible. kindness is what matters”, “kind”);
 // Will return an output of 2 ( 2 occurance of kind in the string )
 
-function NoOfOcuurence(str,findStr){
- let arr = str.split(" ");
- let count = 0;
- for (let i = 0 ; i < arr.length ; i++){
-    if (arr[i].includes(findStr)){
-         count++
+function findNumberOfOccurance(sentence, word) {
+  const array = sentence.toLowerCase().split(" ");
+  let count = 0;
+  const regex = new RegExp(`${word}`, "ig");
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(word.toLowerCase())) {
+      const countArray = array[i].match(regex); // returns as array of strings matched , if not matched returns null
+      if (countArray) {
+        count += countArray.length;
+      }
     }
+  }
+  return count;
 }
-return count
-}
-console.log(NoOfOcuurence("be kind whenever matter possible. kindness is what matters","kind"));
+console.log(
+  findNumberOfOccurance(
+    "be  whenkindever matter possible. KInd  is what matkindters ",
+    "kind"
+  )
+);

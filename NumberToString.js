@@ -4,7 +4,7 @@
 // convertNumberToString(98)
 // output “nineeight”
 
-let stringNum = {
+let digitToString = {
   0: "zero",
   1: "one",
   2: "two",
@@ -16,12 +16,15 @@ let stringNum = {
   8: "eight",
   9: "nine",
 };
-function numberToString(num) {
-   let arr = num.toString().split("");
-   let numString = ""
-   for(let i=0 ; i < arr.length ; i++){
-       numString = numString + stringNum[arr[i]];
-   }
-   return numString;
+function numberToString(number) {
+  if (typeof number !== "number") {
+    return "Invalid input";
+  }
+  const array = number.toString().split("");
+  let result = "";
+  for (let i = 0; i < array.length; i++) {
+    result += digitToString[array[i]];
+  }
+  return result;
 }
 console.log(numberToString(1900));

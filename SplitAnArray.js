@@ -3,13 +3,19 @@
 // stringSplit(“numenticaui”, 2);
 // Output [“nu”, “me”, “nt”, “ic”, “au”, “i];
 
-function splitString(str, n) {
-  let arr = str.split("");
-  let newArr = [];
-  for (let i = 0; i < str.length; i = i + n) {
-    const spliced = arr.splice(0, n);
-    newArr.push(spliced.join(""));
+function splitStringToArray(string, limit) {
+  if (
+    string.toString().length === 0 ||
+    limit <= 0 ||
+    typeof limit !== "number"
+  ) {
+    return [];
   }
-  return newArr;
+  const array = string.toString().split("");
+  let result = [];
+  for (let i = 0; i < string.toString().length; i += limit) {
+    result.push(array.splice(0, limit).join(""));
+  }
+  return result;
 }
-console.log(splitString("numenticaui", 3));
+console.log(splitStringToArray("numenticaui", 3));

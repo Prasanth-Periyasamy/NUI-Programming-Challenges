@@ -2,10 +2,12 @@
 // checkSpaces(“arun”) output false;
 // checkSpaces(“user arun”) output true;
 
-function checkSpaces(str){
-  if (!str) return str;
-  let array = str.split("");
+function hasSpaces(string) {
+  if (typeof string !== "string" || string.length === 0) {
+    return "Invalid input";
+  }
+  const array = string.split("");
   if (array.includes(" ")) return true;
   else return false;
 }
-console.log(checkSpaces("arun"));
+console.log(hasSpaces("ar un"));

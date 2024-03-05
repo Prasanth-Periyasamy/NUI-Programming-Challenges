@@ -4,21 +4,21 @@
 // Output: a
 // since a has more repeating simaltaneously
 
-function simultaneousRepeatingChar(str) {
-let count = 1;
-let maxCount = 1
-let char = ""
-for (let i = 0; i < str.length - 1; i++) {
-    if (str[i] === str[i + 1]) {
-        count++
-        if (maxCount < count) {
-            maxCount = count
-            char = str[i]
-        }
+function simultaneousRepeatingChar(string) {
+  let count = 1;
+  let maxCount = 1;
+  let character = "";
+  for (let i = 0; i < string.length - 1; i++) {
+    if (string[i] === string[i + 1]) {
+      count++;
+      if (maxCount < count) {
+        maxCount = count;
+        character = string[i];
+      }
     } else {
-        count = 1
+      count = 1;
     }
-} 
-   console.log(char,maxCount);
+  }
+  return character;
 }
-simultaneousRepeatingChar("trainngfornewbie");
+console.log(simultaneousRepeatingChar("traaainngfornewbie"));

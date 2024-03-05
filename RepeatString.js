@@ -3,15 +3,19 @@
 // repeat(“arun”, 3);
 // output “arunarunarun”;
 
-
-function RepeatString(str,n){ 
-  if (n === 1 || n < 1 || str.length < 1 ){
-    return str;
+function repeatString(string, repetition) {
+  if (
+    typeof string !== "string" ||
+    typeof repetition !== "number" ||
+    repetition < 1 ||
+    string.length === 0
+  ) {
+    return "Invalid input";
   }
-  let arr = [];
-  for(let i=1 ; i <=n ; i++){
-     arr.push(str);
+  let repeatedString = "";
+  for (let i = 1; i <= repetition; i++) {
+    repeatedString += string;
   }
-  return arr.join("");
+  return repeatedString;
 }
-console.log(RepeatString("",2));
+console.log(repeatString("name", 2));

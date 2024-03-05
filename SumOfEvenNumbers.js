@@ -3,8 +3,11 @@
 // findEvenSum([38, 3, 2, 8, 31])
 // output -  48
 
-let array = [1, 2, 2, -10];
-let evenSum = array
-  .filter((el) => el % 2 === 0)
-  .reduce((acc, cur) => acc + cur, 0);
-console.log(evenSum);
+const array = [1, 2, 2, -10, "2", "hi",-0.1];
+function findSumOfEvenNumbers(array) {
+  if (array.length === 0) return 0;
+  return array
+    .filter((value) => typeof(value) === "number" && value % 2 === 0)
+    .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+}
+console.log(findSumOfEvenNumbers(array));
