@@ -4,7 +4,7 @@
 // Will return an output of 2 ( 2 occurance of kind in the string )
 
 function findNumberOfOccurance(sentence, word) {
-  const array = sentence.toLowerCase().split(" ");
+  const array = sentence.toString().toLowerCase().split(" ");
   let count = 0;
   const regex = new RegExp(`${word}`, "ig");
   for (let i = 0; i < array.length; i++) {
@@ -17,9 +17,4 @@ function findNumberOfOccurance(sentence, word) {
   }
   return count;
 }
-console.log(
-  findNumberOfOccurance(
-    "be  whenkindever matter possible. KInd  is what matkindters ",
-    "kind"
-  )
-);
+console.log(findNumberOfOccurance(99, "kind"));
